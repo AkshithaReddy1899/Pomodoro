@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pomodoro</title>
+    <link href="style.css" rel="stylesheet">
+</head>
+
+<body>
+    <main>
+        <div class="modal-container">
+            <div id="modal">
+                <button id="close">
+                <span class="line line1"></span>
+                <span class="line line2"></span>
+                </button>
+                <h3 style="margin: 30px auto;">Time (minutes)</h3>
+                <div class="input-container">
+                    <label for="pomodoro" class="input-label">Pomodoro
+                        <input type="number" placeholder="30" name="pomodoro"  id="setPomodoroTime">
+                        </label>
+
+                    <label for="shortBreak" class="input-label">Short Break
+                       <input type="number" placeholder="5" name="shortBreak" id="setShortBreakTime">
+                    </label>
+                    <label for="longBreak" class="input-label">Long Break
+                       <input type="number" placeholder="15" name="longBreak" id="setLongBreakTime">
+                    </label>
+                </div>
+
+                <p style="margin: 10px">Pick a color</p>
+                <ul>
+                    <li><button class="color color8" id="color8"></button></li>
+                    <li><button class="color color1" id="color1"></button></li>
+                    <li><button class="color color2" id="color2"></button></li>
+                    <li><button class="color color3" id="color3"></button></li>
+                    <li><button class="color color4" id="color4"></button></li>
+                    <li><button class="color color5" id="color5"></button></li>
+                    <li><button class="color color6" id="color6"></button></li>
+                    <li><button class="color color7" id="color7"></button></li>
+                </ul>
+                <button type="submit" id="submit">Ok</button>
+            </div>
+            <div class="parent">
+                <div class="div1" id="mode-btns"> <button data-mode="pomodoro" class="btn mode-btn" id="pomodoro">Pomodoro</button>
+                    <button data-mode="shortBreak" class="btn mode-btn" id="shortBreak">Short break</button>
+                    <button data-mode="longBreak" class="btn  mode-btn" id="longBreak">Long break</button></div>
+                <div class="div2 container">
+                    <div class="circle">
+                        <h1 class="time pomodoroTime"></h1>
+                    </div>
+                </div>
+                <div class="div3" id="btns">
+                    <button class="phase" id="pause">Pause</button>
+                    <button class="phase" id="start">Start</button>
+                    <button class="phase" id="reset" onClick="history.go(0)">Reset</button></div>
+                <div class="div4">
+                    <button id="settings"><img src="settings-4-24.png" alt="settings"></button>
+                </div>
+            </div>
+        </div>
+    </main>
+    <script src="main.js"></script>
+</body>
+
+</html>
