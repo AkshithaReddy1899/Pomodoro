@@ -35,7 +35,7 @@ let color7 = document.getElementById("color7");
 let color8 = document.getElementById("color8");
 
 /*SOUND*/
-let audio = new Audio("src/clock-tick.mp3");
+let audio = new Audio("clock-tick.mp3");
 
 let defaultTime = {
     defaultPomodoro: 20,
