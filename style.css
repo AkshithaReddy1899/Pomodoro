@@ -1,118 +1,144 @@
 :root {
-    --primary-color: rgb(2, 32, 53);
-    --secondary-color: #a788a7;
+    /* #698561, #c1e7e3, #ffdcf4, #dabfde, #c1bbdd , #c3c1ab, #ae887b   */
+    --primary-color: #79a6a3;
+    --secondary-color: #e7e7e7;
 }
 
 *,
  :after,
  :before {
-    -webkit-box-sizing: border-box;
     box-sizing: border-box;
     margin: 0px;
     padding: 0px;
 }
 
 html {
-    width: 100vw;
-    height: 100vh;
-    font-size: 1.5rem;
-    position: relative;
-    color: #e2e2e2;
-    background-color: #022035;
     background-color: var(--primary-color);
-    transition: .6s ease-out;
+    position: relative;
+    text-align: center;
 }
 
-.parent {
+
+/*general styling*/
+
+button {
+    border: none;
+    outline: none;
+    background-color: transparent;
+    margin: 5px;
+    padding: 3px;
+    font-size: 0.9rem;
+}
+
+.container {
+    position: relative;
     display: grid;
-    grid-template-columns: 1fr 300px 1fr;
-    grid-template-rows: 1fr 1fr 40px 300px 50px 30px 1fr;
-    grid-column-gap: 0px;
-    grid-row-gap: 20px;
+    grid-template-columns: 1fr 3.8fr 1fr;
+    grid-template-rows: 0.8fr 1fr 4fr 1fr 0.7fr 0.5fr;
+    gap: 0px 0px;
+    grid-auto-flow: row;
+    grid-template-areas: ". . ." ". mode-btns ." ". time-container ." ". timer-phase ." ". settings ." ". . .";
+    place-items: center;
 }
 
 
 /*MODE BTNS*/
 
-.div1 {
-    grid-area: 2 / 2 / 3 / 3;
-    position: relative;
-    text-align: center;
+.mode-btns {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    grid-area: mode-btns;
+    background-color: transparent;
     border-radius: 20px;
-    background-color: #383838;
+    height: 40px;
+    width: 280px;
 }
 
 .btn {
-    border: none;
-    background: transparent;
-    outline: none;
-    margin: 5px;
-    padding: 7px;
-    border-radius: 20px;
-    color: rgb(185, 184, 184);
+    color: #464646;
+}
+
+.btn:hover {
+    border: 2px solid whitesmoke;
 }
 
 .btn:focus {
-    background-color: var(--secondary-color);
-    color: #011522;
+    color: black;
 }
 
 
-/*CONTAINER*/
+/*TIME-CONTAINER*/
 
-.div2 {
-    grid-area: 3 / 2 / 4 / 3;
+.time-container {
+    grid-area: time-container;
 }
 
-.container {
-    display: -webkit-box;
-    display: -ms-flexbox;
+.circle {
     display: flex;
     justify-content: center;
     align-items: center;
-    margin: 50px auto 0px auto;
-    width: 200px;
-    background-color: rgb(2, 32, 53);
-    height: 200px;
     border-radius: 100%;
-    -webkit-box-shadow: inset -4px -5px 9px #11354d, inset 5px -3px 9px #040c12;
-    box-shadow: inset 20px 20px 60px #11354d, inset 20px 20px 60px #040c12;
+    width: 200px;
+    height: 200px;
+    margin: 10px 20px;
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    -moz-backdrop-filter: blur(20px);
+    background-color: rgba(224, 215, 215, 0.30);
+    position: relative;
+    font-size: 1.5rem;
 }
 
-.time {
-    margin-bottom: 4px;
-    font-size: 2rem;
+.circle1 {
+    width: 50px;
+    height: 50px;
+    background-color: #c2c8c5;
+    border-radius: 100%;
+    box-shadow: inset 5px 5px 15px #a5a8a8, inset -5px -5px 15px #8f9294;
+    position: relative;
+    left: 23%;
+    bottom: 40px;
+}
+
+.circle2 {
+    width: 70px;
+    height: 70px;
+    background-color: #c2c8c5;
+    border-radius: 100%;
+    box-shadow: inset 20px 20px 30px #a5a8a8, inset -20px -20px 30px #8f9294;
+    position: absolute;
+    left: 70%;
+    top: 150px;
 }
 
 
 /*PHASE*/
 
-.div3 {
-    grid-area: 4 / 2 / 5 / 3;
-    display: grid;
-    grid-template-areas: "pauseBtn startBtn resetBtn";
-}
-
-.phase {
-    color: var(--secondary-color);
-    /*margin: 30px 20px 20px 20px;*/
+.timer-phase {
+    grid-area: timer-phase;
+    border: 1px solid white;
     outline: none;
     border: none;
     background: transparent;
+    display: flex;
+    flex-direction: row;
+}
+
+.phase {
+    font-weight: bold;
+    padding: 7px;
     font-size: 1rem;
-    -webkit-transition: 0.2s ease-in;
-    transition: 0.2s ease-in;
 }
 
 .phase:hover {
-    background-color: var(--secondary-color);
+    border: 2px solid black;
     color: #011522;
-    border-radius: 20px;
-    padding: 5px;
+    border-radius: 5px;
 }
 
 #start {
-    grid-area: startBtn;
+    grid-area: startdisplay;
     display: block;
 }
 
@@ -129,64 +155,59 @@ html {
 
 /*SETTINGS*/
 
-.div4 {
-    grid-area: 5 / 2 / 6 / 3;
-    text-align: center;
-}
-
-#settings {
-    background-color: transparent;
-    margin: auto;
-    outline: none;
-    border: none;
+.settings {
+    grid-area: settings;
 }
 
 
 /*MODAL*/
 
 .modal-container {
-    width: 80%;
-    height: auto;
-    font-family: monospace;
-    transition: 0.2s ease-in;
-    position: absolute;
+    display: flex;
+    justify-content: center;
 }
 
 #modal {
-    background-color: #00121d;
+    width: 80%;
     border-radius: 20px;
-    text-align: center;
-    font-size: 18px;
-    padding: 20px;
-    margin: 60px auto 10px auto;
-    position: relative;
+    font-family: sans-serif;
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
+    background-color: rgba(234, 234, 234, 0.90);
+    border-radius: 0px;
+    border: 1px solid rgba(209, 213, 219, 0.4);
+    position: absolute;
+    z-index: 3;
+    margin: 0;
+    display: none;
+}
+
+#modal h3 {
+    margin: 60px auto 20px auto;
 }
 
 #modal input {
     width: 60px;
     height: 30px;
-    margin: 10px auto;
-    background-color: var(--secondary-color);
+    margin: 10px auto 5px auto;
+    background-color: wheat;
     outline: none;
     border: none;
     padding: 5px;
-    font-size: 12px;
 }
 
 label {
+    padding: 7px;
     font-size: 12px;
-    padding: 5px;
 }
 
 .input-container {
-    display: -webkit-box;
-    display: -ms-flexbox;
     display: flex;
-    -ms-flex-direction: row;
     flex-direction: row;
     text-align: center;
     justify-content: center;
     align-items: center;
+    margin: 0px 0px 30px 0px;
 }
 
 .input-label {
@@ -206,10 +227,7 @@ input[type=number] {
 
 ul {
     list-style: none;
-    display: -webkit-box;
-    display: -ms-flexbox;
     display: flex;
-    -ms-flex-direction: row;
     flex-direction: row;
     justify-content: center;
 }
@@ -226,55 +244,55 @@ li {
     margin: 5px auto 20px auto;
 }
 
-.color:active {
-    border: 3px solid whitesmoke;
+.color:hover {
+    border: 3px solid black;
 }
 
 .color1 {
-    background-color: #ccd4ff;
+    background-color: #79a6a3;
 }
 
 .color2 {
-    background-color: #f4bfff;
+    background-color: #9fb9bf;
 }
 
 .color3 {
-    background-color: #b5ffc6;
+    background-color: #698561;
 }
 
 .color4 {
-    background-color: #fceec2;
+    background-color: #b5ead7;
 }
 
 .color5 {
-    background-color: #ffbfad;
+    background-color: #c6adad;
 }
 
 .color6 {
-    background-color: #ffaab8;
+    background-color: #fcd5ce;
 }
 
 .color7 {
-    background-color: #ffadad;
+    background-color: #ffdac1;
 }
 
 .color8 {
-    background-color: #a788a7;
+    background-color: #c1bbdd;
 }
 
 #close {
     background-color: transparent;
     outline: none;
     border: none;
+    position: relative;
     float: right;
-    margin: 10px 20px 5px auto;
-    position: absolute;
+    margin: 10px 20px 0px 0px;
 }
 
 .line {
     height: 0.8rem;
     width: 0.12rem;
-    background-color: whitesmoke;
+    background-color: black;
 }
 
 .line1 {
@@ -291,67 +309,124 @@ li {
 
 #submit {
     padding: 5px;
-    width: 40px;
-    margin: 10px;
-    border: 1px solid whitesmoke;
-    color: whitesmoke;
+    margin: 5px auto 30px auto;
+    width: 50px;
+    border: 1px solid black;
+    color: black;
     background-color: transparent;
-    border-radius: 10px;
     outline: none;
 }
 
 #submit:hover {
-    background-color: var(--secondary-color);
-    color: rgb(2, 32, 53);
-    border: 1px solid var(--secondary-color);
+    background-color: black;
+    color: whitesmoke;
+    border: 1px solid black;
     outline: none;
 }
 
-@media screen and (min-width: 800px) {
-    html {
-        font-size: 1.8rem;
+@-moz-document url-prefix() {
+    body {
+        margin-top: 30px;
     }
-    .parent {
-        grid-template-columns: 1fr 400px 1fr;
-        grid-template-rows: 1fr 65px 300px 60px 30px 1fr;
-        grid-row-gap: 5px;
+    .container {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
     }
-    #mode-btns {
-        margin: 20px auto 0px auto;
+    .circle {
+        background-color: rgba(224, 215, 215, 0.65);
+        margin-top: 40px;
     }
-    .btn {
+    .circle2 {
+        left: 65%;
+        top: 120px;
+    }
+    @media screen and (min-width: 530px) {
+        .circle2 {
+            left: 60%;
+        }
+    }
+    @media screen and (min-width: 800px) {
+        .circle2 {
+            left: 55%;
+        }
+    }
+    @media screen and (min-width: 1320px) {
+        .circle2 {
+            left: 40%;
+        }
+    }
+}
+
+@media screen and (min-width: 400px) {
+    .circle2 {
+        left: 60%;
+    }
+}
+
+@media screen and (min-width: 830px) {
+    .container {
+        font-size: 1.2rem;
+    }
+    .circle1 {
+        width: 50px;
+        height: 50px;
+        left: 0%;
+    }
+    .circle2 {
+        width: 150px;
+        height: 150px;
+    }
+    .circle {
+        width: 350px;
+        height: 250px;
+        border-radius: 5px;
+        font-size: 2rem;
+    }
+    .mode-btns {
+        width: 400px;
         padding: 10px;
     }
-    .contianer {
-        width: 300px;
-        height: 300px;
+    .mode-btn {
+        font-size: 1.2rem;
+        padding: 5px;
     }
-    .modal-container {
-        width: 60%;
-        height: 60%;
-        left: 20%;
-        font-size: 20px;
-        padding: 20px;
+    .phase {
+        font-size: 1.6rem;
+    }
+    #modal h3 {
+        margin: 60px auto 20px auto;
+        font-size: 1.5rem;
+    }
+    #modal p {
+        font-size: 18px;
+        margin: 10px;
     }
     #modal input {
-        margin: 10px auto;
-        font-size: 16px;
-    }
-    .color {
-        width: 40px;
+        width: 90px;
         height: 40px;
-        margin: 10px auto 20px auto;
+        margin: 15px auto 5px auto;
     }
     label {
-        font-size: 18px;
-        padding: 15px;
+        padding: 10px;
+        font-size: 20px;
+    }
+    li {
+        margin: 5px;
+    }
+    .color {
+        width: 50px;
+        height: 50px;
+        border-radius: 100%;
+    }
+    .line {
+        height: 1rem;
+        width: 0.2rem;
     }
     #submit {
-        padding: 5px;
-        width: 60px;
-        font-size: 0.7rem;
-        margin: 10px;
-        border: 2px solid whitesmoke;
-        border-radius: 15px;
+        padding: 7px;
+        margin: 5px auto 40px auto;
+        width: 70px;
     }
 }
