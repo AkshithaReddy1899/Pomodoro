@@ -15,19 +15,10 @@ I have gone with the basic styling also giving an option of choosing secondory c
 - CSS
 - JavaScript
 
-
-# Portfolio
-
-Portfolio website to showcase my projects 
-
-# Live link
-
-[live](https://akshithareddy1899.github.io/Portfolio/)
-
-
 # Screenshot
 
-![Akshitha-Reddy-Portfolio](https://user-images.githubusercontent.com/70577783/150538820-5e3486ba-2ec1-43b9-8a85-e995c24ef9d3.png)
+![Pomodoro](https://user-images.githubusercontent.com/70577783/150546017-788e6f61-ad36-44fa-9d96-d0e37eb9611e.png)
+![Pomodoro (1)](https://user-images.githubusercontent.com/70577783/150546065-4d5f983a-6e75-43ae-9b70-35c1685cd1c4.png)
 
 # Deployed using
 
