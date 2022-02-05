@@ -1,7 +1,6 @@
 :root {
-    /* #698561, #c1e7e3, #ffdcf4, #dabfde, #c1bbdd , #c3c1ab, #ae887b   */
-    --primary-color: #79a6a3;
-    --secondary-color: #e7e7e7;
+  --primary-color: #79a6a3;
+  --secondary-color: #e7e7e7;
 }
 
 *,
@@ -15,9 +14,13 @@
 html {
     background-color: var(--primary-color);
     position: relative;
-    text-align: center;
 }
 
+.flex {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
 
 /*general styling*/
 
@@ -41,13 +44,9 @@ button {
     place-items: center;
 }
 
-
 /*MODE BTNS*/
 
 .mode-btns {
-    display: flex;
-    align-items: center;
-    justify-content: center;
     grid-area: mode-btns;
     background-color: transparent;
     border-radius: 20px;
@@ -68,7 +67,6 @@ button {
     color: black;
 }
 
-
 /*TIME-CONTAINER*/
 
 .time-container {
@@ -76,9 +74,6 @@ button {
 }
 
 .circle {
-    display: flex;
-    justify-content: center;
-    align-items: center;
     border-radius: 100%;
     width: 200px;
     height: 200px;
@@ -113,14 +108,11 @@ button {
     top: 150px;
 }
 
-
 /*PHASE*/
 
 .timer-phase {
     grid-area: timer-phase;
     border: 1px solid white;
-    outline: none;
-    border: none;
     background: transparent;
     display: flex;
     flex-direction: row;
@@ -154,19 +146,17 @@ button {
     display: none;
 }
 
-
 /*SETTINGS*/
 
 .settings {
     grid-area: settings;
 }
 
-
 /*MODAL*/
 
 .modal-container {
-    display: flex;
-    justify-content: center;
+  display: flex;
+  justify-content: center;
 }
 
 #modal {
@@ -189,6 +179,10 @@ button {
     margin: 60px auto 20px auto;
 }
 
+#close {
+  font-size: 2rem;
+}
+
 #modal input {
     width: 60px;
     height: 30px;
@@ -205,10 +199,7 @@ label {
 }
 
 .input-container {
-    display: flex;
     flex-direction: row;
-    text-align: center;
-    justify-content: center;
     align-items: center;
     margin: 0px 0px 30px 0px;
 }
@@ -285,29 +276,9 @@ li {
 
 #close {
     background-color: transparent;
-    outline: none;
-    border: none;
     position: relative;
     float: right;
     margin: 10px 20px 0px 0px;
-}
-
-.line {
-    height: 0.8rem;
-    width: 0.12rem;
-    background-color: black;
-}
-
-.line1 {
-    transform: rotate(-50deg);
-    display: block;
-    position: fixed;
-}
-
-.line2 {
-    transform: rotate(50deg);
-    display: block;
-    position: fixed;
 }
 
 #submit {
@@ -317,14 +288,11 @@ li {
     border: 1px solid black;
     color: black;
     background-color: transparent;
-    outline: none;
 }
 
 #submit:hover {
     background-color: black;
     color: whitesmoke;
-    border: 1px solid black;
-    outline: none;
 }
 
 @-moz-document url-prefix() {
@@ -422,10 +390,6 @@ li {
         width: 50px;
         height: 50px;
         border-radius: 100%;
-    }
-    .line {
-        height: 1rem;
-        width: 0.2rem;
     }
     #submit {
         padding: 7px;

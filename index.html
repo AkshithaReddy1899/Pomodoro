@@ -12,13 +12,10 @@
 <body>
     <div class="modal-container">
         <div id="modal">
-            <button id="close">
-                <span class="line line1"></span>
-                <span class="line line2"></span>
-                </button>
+            <button id="close">&times;</button>
             <h3>Time (minutes)</h3>
             <p>Enter time below to start a session or to take a break</p>
-            <div class="input-container">
+            <div class="input-container flex">
                 <label for="pomodoro" class="input-label">
                         <input type="number" placeholder="30" name="pomodoro"  id="setPomodoroTime">
                 </label>
@@ -41,14 +38,14 @@
     </div>
     </div>
     <div class="container">
-        <div class="mode-btns div1" id="mode-btns">
+        <div class="mode-btns flex div1" id="mode-btns">
             <button class="btn mode-btn" id="pomodoro">Pomodoro</button>
             <button class="btn mode-btn" id="shortBreak">Short break</button>
             <button class="btn mode-btn" id="longBreak">Long break</button>
         </div>
         <div class="circle2"></div>
         <div class="time-container">
-            <div class="circle">
+            <div class="circle flex">
                 <h1 class="time pomodoroTime"></h1>
             </div>
             <div class="circle1"></div>
